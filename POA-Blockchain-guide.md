@@ -65,7 +65,7 @@ Example:
   ![generate_genesis1](Screenshots/min_node2.png)
 
 5. Your private PoA blockchain should now be running!
-cu
+
 6. With both nodes up and running, the blockchain can be added to MyCrypto for testing.
 
     * Open the MyCrypto app, then click `Change Network` at the bottom left:
@@ -76,10 +76,8 @@ cu
 
     * Make sure that you scroll down to choose `Custom` in the "Network" column to reveal more options like `Chain ID`:
 
-    ![custom network](Images/custom-network.png)
+     * Type `ETH` in the Currency box.
 
-    * Type `ETH` in the Currency box.
-    
     * In the Chain ID box, type the chain id you generated during genesis creation.
 
     * In the URL box type: `http://127.0.0.1:8545`.  This points to the default RPC port on your local machine.
@@ -94,9 +92,11 @@ Example:
 
     * Select the `View & Send` option from the left menu pane, then click `Keystore file`.
 
-    ![select_keystore_file](Screenshots/select_keystore_file.png)
+  ![select_keystore_file](Screenshots/select_keystore_file.png)
 
     * On the next screen, click `Select Wallet File`, then navigate to the keystore directory inside your Node1 directory, select the file located there, provide your password when prompted and then click `Unlock`.
+     
+![keystore_unlocked](Screenshots/keystore_unlock.gif)
 
     * This will open your account wallet inside MyCrypto. 
     
