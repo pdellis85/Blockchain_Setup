@@ -1,183 +1,73 @@
-# Proof of Authority Development Chain
+# Scamblock, an out-of-the-box blockchain
 
-For this assignment, you will take on the role of a new developer at a small bank.
+In this tutorial, I will be using `geth`, to run a Scamblock private network.
 
-Your mission, should you choose to accept it, will be to set up a testnet blockchain for your organization.
+This network uses the Clique Proof of Work consensus algorithm. The chain ID is `227`.
 
-To do this, you will create and submit four deliverables:
+The sealer node addresses are:
 
-* Set up your custom testnet blockchain.
+`0x2ce5115E272e43F9AE426Ea240212A33F4c668Ec`
+`0x89DDeac2A15702B38eeCD8bb72F8415D9caE0a40`
 
-* Send a test transaction.
+The account password for both nodes is `porkchop`
 
-* Create a repository.
+This is the configuration from `puppeth`:
 
-* Write instructions on how to use the chain for the rest of your team.
+![puppeth](Screenshots/puppeth.png)
 
-## Background
+## Install the geth node software
 
-You have just landed a new job at ZBank, a small, innovative bank that is interested in exploring what
-blockchain technology can do for them and their customers.
+Download and install `geth` for your operating system here: <https://geth.ethereum.org/downloads/>
 
-Your first project at the company is to set up a private testnet that you and your team of developers
-can use to explore potentials for blockchain at ZBank.
+## Install the MyCrypto GUI wallet
 
-You have decided on setting up a testnet because:
+Download and install the desktop version of the MyCrypto wallet here: <https://download.mycrypto.com/>
 
-There is no real money involved, which will give your team of developers the freedom to experiment.
+This wallet allows communicating with custom networks, which we will configure later.
 
-Testnets allows for offline development.
+## Run the first node and enable the mining/sealing
 
-In order to set up a testnet, you will need to use the following skills/tools we learned in class:
+`geth --datadir node1 --unlock "d84d79a0069fb5d3cf8eca3c689f231d6b603c8f" --mine --rpc`
 
-* Puppeth, to generate your genesis block.
+We enable the `--rpc` flag on the first node to talk to it later. This defaults to port `8545`.
+We need to unlock the node's account to enable it to sign blocks.
 
-* Geth, a command-line tool, to create keys, initialize nodes, and connect the nodes together.
+## Copy the enode address from this node
 
-* The Clique Proof of Authority algorithm.
+For example:
+`enode://b044f481e52f03950ed88ad18f550ace268ad4e4e1647f80c5808d6ea2c4e7f550d8ed25a14608afa6e5828f1b69fdfcf5d7775394f7c38d8592f600e4a37e90@127.0.0.1:30303`
 
-Tokens inherently have no value here, so we will provide pre-configured accounts and nodes for easy setup.
+## Use the first node's enode address as the bootnode for the second node and run on a separate port
 
-After creating the custom development chain, create documentation for others on how to start it using the pre-configured
-nodes and accounts. You can name the network anything you want, have fun with it!
+`geth --datadir node2 --unlock "7a4f862ab163fc62dce2cfbb734ddac153c5e8cc" --mine --port 30304 --bootnodes enode://b044f481e52f03950ed88ad18f550ace268ad4e4e1647f80c5808d6ea2c4e7f550d8ed25a14608afa6e5828f1b69fdfcf5d7775394f7c38d8592f600e4a37e90@127.0.0.1:30303`
 
-Be sure to include any preliminary setup information, such as installing dependencies and environment configuration.
+Using the first node as a bootnode will enable the nodes to communicate with each other and discover new nodes later.
 
-## Instructions
+## Success!
 
-### Setup the custom out-of-the-box blockchain
+You should now be mining/sealing blocks using the Proof of Authority algorithm! Now it's time to send a transaction.
 
-* Create a new project directory for your new network. Call it whatever you want!
+## Send a test transaction
 
-* Create a "Screenshots" folder inside of the project directory.
+Open up MyCrypto and select `Change network` at the bottom left.
 
-* Create accounts for two (or more) nodes for the network with a separate `datadir` for each using `geth`.
+Select `Add Custom Node` and use `127.0.0.1:8545` to connect to the first node, add a name, use chain ID `333` and save.
 
-* Run `puppeth`, name your network, and select the option to configure a new genesis block.
+Your configuration should look like this:
 
-* Choose the `Clique (Proof of Authority)` consensus algorithm.
+![custom-node](Screenshots/custom-node.png)
 
-* Paste both account addresses from the first step one at a time into the list of accounts to seal.
+You should now be connected to the local blockchain.
 
-* Paste them again in the list of accounts to pre-fund. There are no block rewards in PoA, so you'll need to pre-fund.
+Click on the `Keystore file` option to access the first node's wallet, and navigate to `node1/keystore` and select
+the keystore file, then enter `testnetpassword` as the password.
 
-* You can choose `no` for pre-funding the pre-compiled accounts (0x1 .. 0xff) with wei. This keeps the genesis cleaner.
+You should now be able to send a transaction. Fill in the second node's account and send it one ETH.
 
-* Complete the rest of the prompts, and when you are back at the main menu, choose the "Manage existing genesis" option.
+![transaction-send](Screenshots/transaction-send.png)
 
-* Export genesis configurations. This will fail to create two of the files, but you only need `networkname.json`.
+Once confirmed, you can check the TX Status by clicking the button in the popup, or pasting the TX Hash into the TX Status section of the app.
 
-* You can delete the `networkname-harmony.json` file.
+![transaction-success](Screenshots/transaction-success.png)
 
-* Screenshot the `puppeth` configuration once complete and save it to the Screenshots folder.
-
-* Initialize each node with the new `networkname.json` with `geth`.
-
-* Run the first node, unlock the account, enable mining, and the RPC flag. Only one node needs RPC enabled.
-
-* Set a different peer port for the second node and use the first node's `enode` address as the `bootnode` flag.
-
-* Be sure to unlock the account and enable mining on the second node!
-
-* You should now see both nodes producing new blocks, congratulations!
-
-### Send a test transaction
-
-* Use the MyCrypto GUI wallet to connect to the node with the exposed RPC port.
-
-* You will need to use a custom network, and include the chain ID, and use ETH as the currency.
-
-![custom-node](Images/custom-node.png)
-
-* Import the keystore file from the `node1/keystore` directory into MyCrypto. This will import the private key.
-
-* Send a transaction from the `node1` account to the `node2` account.
-
-* Copy the transaction hash and paste it into the "TX Status" section of the app, or click "TX Status" in the popup.
-
-* Screenshot the transaction metadata (status, tx hash, block number, etc) and save it to your Screenshots folder.
-
-* Celebrate, you just created a blockchain and sent a transaction!
-
-![transaction-success](Images/transaction-success.png)
-
-### Create a repository, and instructions for launching the chain
-
-* Create a `README.md` in your project directory and create documentation that explains how to start the network.
-
-* Remember to include any environment setup instructions and dependencies.
-
-* Be sure to include all of the `geth` flags required to get both nodes to mine and explain what they mean.
-
-* Explain the configuration of the network, such as it's blocktime, chain ID, account passwords, ports, etc.
-
-* Explain how to connect MyCrypto to your network and demonstrate (via screenshots and steps) and send a transaction.
-
-* Upload the code, including the `networkname.json` and node folders.
-
-### Remember, *never* share your mainnet private keys! This is a testnet, so coins have no value here!
-
-### Hints
-
-* If you get stuck - try our step by step PoA Guide located [here](Resources/POA-Blockchain-guide.md).
-
-* If you aren't seeing any movement in the wallet amounts in MyCrypto after sending/receiving transactions, try the following:
-    * Terminate both nodes using `control+C` in the Node1 and Node2 terminal windows.
-    * Change networks in MyCrypto to a Testnet such as Kovan.
-    * Restart Node1 and Node2 in their terminal windows.
-    * Reconnect to your network in MyCrypto.
-    * Log into your wallet and refresh the amount.
-    
-* If that doesn't help make sure you are sending a large enough sum of ETH to see actual movement in the digits. You may have to click on the amount itself to see the full value down to the WEI.
-
-    ![before_after_click_mycrypto](Images/before_after_click_mycrypto.png)
-
-### Submission
-
-* Include all appropriate requirements in a GitHub repository.
-
-* Submit the link to your GitHub repository to Bootcamp Spot.
-
----
-### Requirements
-
-#### Setup and Testing  (50 points)
-
-##### To receive all points, your code must:
-
-* Set up the custom Testnet Blockchain. (14 points)
-* Follow and test the directives for set up as indicated. (12 points)
-* Send test transactions. (12 points)
-* Send multi-node test transactions. (12 points)
-
-#### Markdown Documentation (20 points)
-
-##### To receive all points, your code must:
-
-* Include appropriate screenshots of steps and transactions in the ReadME.md file. (10 points)
-* Provide a detailed description of the steps for setting up the network and include screenshots of the process in the ReadME.md. (10 points)
-
-#### Coding Conventions and Formatting (10 points)
-
-##### To receive all points, your code must:
-
-* Place imports at the beginning of the file, just after any module comments and docstrings and before module globals and constants. (3 points)
-* Name functions and variables with lowercase characters and with words separated by underscores. (2 points)
-* Follow Don't Repeat Yourself (DRY) principles by creating maintainable and reusable code. (3 points)
-* Use concise logic and creative engineering where possible. (2 points)
-
-#### Deployment and Submission (10 points)
-
-##### To receive all points, you must:
-
-* Submit a link to a GitHub repository that’s cloned to your local machine and contains your files. (5 points)
-* Include appropriate commit messages in your files. (5 points)
-
-#### Code Comments (10 points)
-
-##### To receive all points, your code must:
-
-* Be well commented with concise, relevant notes that other developers can understand. (10 points)
-
----
-© 2021 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+Voila! You can now use the Scamblock blockchain for your local development!
