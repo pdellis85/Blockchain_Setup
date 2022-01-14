@@ -94,7 +94,7 @@ Example:
 
   ![select_keystore_file](Screenshots/select_keystore_file.png)
 
-    * On the next screen, click `Select Wallet File`, then navigate to the keystore directory inside your Node1 directory, select the file located there, provide your password when prompted and then click `Unlock`.
+  * On the next screen, click `Select Wallet File`, then navigate to the keystore directory inside your Node1 directory, select the file located there, provide your password when prompted and then click `Unlock`.
      
 ![keystore_unlocked](Screenshots/keystore_unlock.gif)
 
