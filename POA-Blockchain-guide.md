@@ -98,28 +98,28 @@ Example:
      
 ![keystore_unlocked](Screenshots/keystore_unlock.gif)
 
-    * This will open your account wallet inside MyCrypto. 
+  * This will open your account wallet inside MyCrypto. 
     
-    * Looks like we're filthy rich! This is the balance that was pre-funded for this account in the genesis configuration; however, these millions of ETH tokens are just for testing purposes.   
+  * Looks like we're filthy rich! This is the balance that was pre-funded for this account in the genesis configuration; however, these millions of ETH tokens are just for testing purposes.   
 
     ![keystore_unlock](Screenshots/open_wallet.png)
 
-    * In the `To Address` box, type the account address from Node2, then fill in an arbitrary amount of ETH:
+  * In the `To Address` box, type the account address from Node2, then fill in an arbitrary amount of ETH:
 
      ![transaction send](Screenshots/trans_money.png)
 
-    * Confirm the transaction by clicking "Send Transaction", and the "Send" button in the pop-up window.  
+  * Confirm the transaction by clicking "Send Transaction", and the "Send" button in the pop-up window.  
 
-    ![Send transaction](Screenshots/confirm_trans.png)
+  ![Send transaction](Screenshots/confirm_trans.png)
 
-    * Click the `Check TX Status` when the green message pops up, confirm the logout:
+  * Click the `Check TX Status` when the green message pops up, confirm the logout:
 
-    ![check tx](Screenshots/check-tx-status.png)
+  ![check tx](Screenshots/check-tx-status.png)
 
-    * You should see the transaction go from `Pending` to `Successful` in around the same blocktime you set in the genesis.
+  * You should see the transaction go from `Pending` to `Successful` in around the same blocktime you set in the genesis.
 
-    * You can click the `Check TX Status` button to update the status.
+  * You can click the `Check TX Status` button to update the status.
 
-    ![successful transaction](Screenshots/check_success.png)
+![successful transaction](Screenshots/check_success.png)
 
 Congratulations, you successfully created your own private blockchain!
