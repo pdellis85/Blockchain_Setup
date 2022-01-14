@@ -1,0 +1,40 @@
+=============== Jan 13, 2022 (CST) ===============
+15:24:40.270127 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:24:40.310407 db@open opening
+15:24:40.311616 version@stat F·[] S·0B[] Sc·[]
+15:24:40.351142 db@janitor F·2 G·0
+15:24:40.351202 db@open done T·40.688939ms
+15:41:02.510345 db@close closing
+15:41:02.510575 db@close done T·227.094µs
+=============== Jan 13, 2022 (CST) ===============
+15:44:28.929033 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:44:28.929303 version@stat F·[] S·0B[] Sc·[]
+15:44:28.929329 db@open opening
+15:44:28.929425 journal@recovery F·1
+15:44:28.929531 journal@recovery recovering @1
+15:44:28.972333 memdb@flush created L0@2 N·3881 S·120KiB "loc..seq,v3881":"version,v1"
+15:44:28.973375 version@stat F·[1] S·120KiB[120KiB] Sc·[0.25]
+15:44:29.039341 db@janitor F·3 G·0
+15:44:29.039387 db@open done T·110.047947ms
+=============== Jan 13, 2022 (CST) ===============
+15:45:22.709264 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:45:22.709488 version@stat F·[1] S·120KiB[120KiB] Sc·[0.25]
+15:45:22.709547 db@open opening
+15:45:22.709682 journal@recovery F·1
+15:45:22.709868 journal@recovery recovering @3
+15:45:22.730560 memdb@flush created L0@5 N·1 S·159B "loc..seq,v3883":"loc..seq,v3883"
+15:45:22.730989 version@stat F·[2] S·121KiB[121KiB] Sc·[0.50]
+15:45:22.792466 db@janitor F·4 G·0
+15:45:22.792647 db@open done T·83.082257ms
+=============== Jan 13, 2022 (CST) ===============
+15:56:46.246904 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:56:46.247140 version@stat F·[2] S·121KiB[121KiB] Sc·[0.50]
+15:56:46.247167 db@open opening
+15:56:46.247328 journal@recovery F·1
+15:56:46.247407 journal@recovery recovering @6
+15:56:46.267084 memdb@flush created L0@8 N·1 S·159B "loc..seq,v3885":"loc..seq,v3885"
+15:56:46.268625 version@stat F·[3] S·121KiB[121KiB] Sc·[0.75]
+15:56:46.331246 db@janitor F·5 G·0
+15:56:46.331298 db@open done T·84.076955ms
+16:19:38.012727 db@close closing
+16:19:38.012946 db@close done T·217.558µs

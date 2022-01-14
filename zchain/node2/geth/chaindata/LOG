@@ -1,0 +1,76 @@
+=============== Jan 13, 2022 (CST) ===============
+15:21:09.425523 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:21:09.466242 db@open opening
+15:21:09.467605 version@stat F·[] S·0B[] Sc·[]
+15:21:09.488517 db@janitor F·2 G·0
+15:21:09.488682 db@open done T·22.357453ms
+15:21:09.490604 db@close closing
+15:21:09.490895 db@close done T·281.182µs
+=============== Jan 13, 2022 (CST) ===============
+15:24:39.808237 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:24:39.808471 version@stat F·[] S·0B[] Sc·[]
+15:24:39.808509 db@open opening
+15:24:39.808574 journal@recovery F·1
+15:24:39.815295 journal@recovery recovering @1
+15:24:39.834775 memdb@flush created L0@2 N·15 S·1016B "/\x1f\xdf..>\xa4\x8d,v4":"\xbd\xa4S..D\f\xba,v5"
+15:24:39.842155 version@stat F·[1] S·1016B[1016B] Sc·[0.25]
+15:24:39.913137 db@janitor F·3 G·0
+15:24:39.913291 db@open done T·104.730004ms
+15:41:02.506118 db@close closing
+15:41:02.506844 db@close done T·724.41µs
+=============== Jan 13, 2022 (CST) ===============
+15:44:28.588811 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:44:28.589069 version@stat F·[1] S·1016B[1016B] Sc·[0.25]
+15:44:28.589102 db@open opening
+15:44:28.589174 journal@recovery F·1
+15:44:28.595497 journal@recovery recovering @3
+15:44:28.617646 memdb@flush created L0@5 N·12 S·924B "Dat..ion,v17":"r\x00\x00..\xc4\xfb\x81,v24"
+15:44:28.627904 version@stat F·[2] S·1KiB[1KiB] Sc·[0.50]
+15:44:28.692036 db@janitor F·4 G·0
+15:44:28.692174 db@open done T·103.044106ms
+=============== Jan 13, 2022 (CST) ===============
+15:45:22.378201 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:45:22.378507 version@stat F·[2] S·1KiB[1KiB] Sc·[0.50]
+15:45:22.378540 db@open opening
+15:45:22.378626 journal@recovery F·1
+15:45:22.385087 journal@recovery recovering @6
+15:45:22.404936 memdb@flush created L0@8 N·1 S·216B "Las..der,v30":"Las..der,v30"
+15:45:22.411842 version@stat F·[3] S·2KiB[2KiB] Sc·[0.75]
+15:45:22.474264 db@janitor F·5 G·0
+15:45:22.474418 db@open done T·95.845985ms
+=============== Jan 13, 2022 (CST) ===============
+15:53:07.893509 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:53:07.893832 version@stat F·[3] S·2KiB[2KiB] Sc·[0.75]
+15:53:07.893867 db@open opening
+15:53:07.893984 journal@recovery F·1
+15:53:07.894523 journal@recovery recovering @9
+15:53:07.915251 memdb@flush created L0@11 N·1 S·216B "Las..der,v32":"Las..der,v32"
+15:53:07.915833 version@stat F·[4] S·2KiB[2KiB] Sc·[1.00]
+15:53:07.981398 db@janitor F·6 G·0
+15:53:07.981542 db@open done T·87.647773ms
+15:53:07.981920 table@compaction L0·4 -> L1·0 S·2KiB Q·33
+15:53:07.983970 db@close closing
+15:53:08.004672 table@build created L1@14 N·23 S·1KiB "/\x1f\xdf..>\xa4\x8d,v4":"\xbd\xa4S..D\f\xba,v5"
+15:53:08.004826 table@build exiting
+15:53:08.004876 table@build revert @14
+15:53:08.006176 db@close done T·22.196585ms
+=============== Jan 13, 2022 (CST) ===============
+15:56:45.716237 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:56:45.716512 version@stat F·[4] S·2KiB[2KiB] Sc·[1.00]
+15:56:45.716555 db@open opening
+15:56:45.716637 journal@recovery F·1
+15:56:45.723670 journal@recovery recovering @12
+15:56:45.746310 memdb@flush created L0@14 N·1 S·380B "eth..\xa7L\xb8,v34":"eth..\xa7L\xb8,v34"
+15:56:45.755519 version@stat F·[5] S·2KiB[2KiB] Sc·[1.25]
+15:56:45.821368 db@janitor F·7 G·0
+15:56:45.821505 db@open done T·104.929828ms
+15:56:45.821789 table@compaction L0·5 -> L1·0 S·2KiB Q·35
+15:56:45.885123 table@build created L1@17 N·23 S·1KiB "/\x1f\xdf..>\xa4\x8d,v4":"\xbd\xa4S..D\f\xba,v5"
+15:56:45.886492 version@stat F·[0 1] S·1KiB[0B 1KiB] Sc·[0.00 0.00]
+15:56:45.963702 table@compaction committed F-4 S-1KiB Ke·0 D·7 T·141.766793ms
+15:56:45.964802 table@remove removed @11
+15:56:45.984704 table@remove removed @8
+15:56:45.986485 table@remove removed @5
+15:56:46.005537 table@remove removed @2
+16:19:38.008069 db@close closing
+16:19:38.008281 db@close done T·210.599µs
